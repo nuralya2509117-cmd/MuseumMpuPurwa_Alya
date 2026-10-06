@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Koleksi - Museum Mpu Purwa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #121414;
+            color: #f2ebdd;
+        }
+
+        header {
+            background-color: #1f3339;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #c5a24a;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            color: #f2ebdd;
+        }
+
+        .logo p {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #c5a24a;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #f2ebdd;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c5a24a;
+        }
+
+        .detail-container {
+            padding: 50px 8% 70px;
+            min-height: 650px;
+        }
+
+        .back {
+            display: inline-block;
+            text-decoration: none;
+            color: #c5a24a;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin-bottom: 30px;
+            transition: color 0.3s;
+        }
+
+        .back:hover {
+            color: #f2ebdd;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .detail-image {
+            background-color: #1f3339;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+            border: 1px solid #2d4750;
+            text-align: center;
+        }
+
+        .detail-image img {
+            width: 100%;
+            max-width: 400px;
+            height: 430px;
+            object-fit: contain;
+            display: block;
+            margin: auto;
+        }
+
+        .detail-info {
+            max-width: 550px;
+        }
+
+        .detail-info h2 {
+            font-size: 42px;
+            color: #f2ebdd;
+            margin-bottom: 10px;
+        }
+
+        .kategori {
+            font-family: Arial, sans-serif;
+            letter-spacing: 3px;
+            font-size: 12px;
+            color: #c5a24a;
+            margin-bottom: 20px;
+        }
+
+        .deskripsi {
+            font-family: Arial, sans-serif;
+            color: #c5beb0;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            white-space: pre-line;
+        }
+
+        .metadata {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1f3339;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            font-family: Arial, sans-serif;
+            border: 1px solid #2d4750;
+        }
+
+        .metadata th,
+        .metadata td {
+            padding: 13px 15px;
+            text-align: left;
+            border-bottom: 1px solid #2d4750;
+            font-size: 14px;
+        }
+
+        .metadata th {
+            width: 35%;
+            color: #c5a24a;
+        }
+
+        .metadata td {
+            color: #c5beb0;
+        }
+
+        .metadata tr:last-child th,
+        .metadata tr:last-child td {
+            border-bottom: none;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #c5a24a;
+            color: #121414;
+            font-weight: bold;
+            padding: 13px 22px;
+            text-decoration: none;
+            border-radius: 7px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e2be62;
+        }
+
+        footer {
+            background-color: #121414;
+            color: #f2ebdd;
+            padding: 35px 8% 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #c5a24a;
+        }
+
+        footer h3 {
+            font-size: 22px;
+            color: #f2ebdd;
+        }
+
+        footer p {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin-top: 8px;
+            color: #c5a24a;
+        }
+
+        @media(max-width: 900px) {
+            nav { display: none; }
+            .detail-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            .detail-info { max-width: 100%; }
+            .detail-info h2 { font-size: 34px; }
+            .detail-image img { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>MUSEUM MPU PURWA</h1>
+        <p>WARISAN MASA LALU</p>
+    </div>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="katalog.html">Koleksi</a>
+        <a href="pengunjung.html">Kunjungan</a>
+        <a href="https://maps.app.goo.gl/9Q1M6z5eM8Yy81sC8" target="_blank" rel="noopener noreferrer">Lokasi 📍</a>
+    </nav>
+</header>
+
+<main>
+    <section class="detail-container">
+        <a href="katalog.html" class="back">← Kembali ke Katalog</a>
+
+        <div class="detail-content">
+            <div class="detail-image">
+                <img id="img-koleksi" src="" alt="Gambar Artefak">
+            </div>
+
+            <div class="detail-info">
+                <h2 id="nama-benda">-</h2>
+                <p class="kategori" id="no-inv">-</p>
+
+                <table class="metadata">
+                    <tr>
+                        <th>Bahan</th>
+                        <td id="bahan">-</td>
+                    </tr>
+                    <tr>
+                        <th>Ukuran</th>
+                        <td id="ukuran">-</td>
+                    </tr>
+                    <tr>
+                        <th>Asal</th>
+                        <td id="asal">-</td>
+                    </tr>
+                </table>
+
+                <p class="deskripsi" id="deskripsi">-</p>
+
+                <a href="katalog.html" class="back-button">← Kembali ke Katalog</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div>
+        <h3>Museum Mpu Purwa</h3>
+        <p>Warisan sejarah dan budaya Malang</p>
+    </div>
+    <p>&copy; 250911722743 Nur Alya Kaila Qoi Sara</p>
+</footer>
+
+<script>
+    const dataKoleksi = {
+        "kuncup-teratai": {
+            nama: "Kuncup Teratai",
+            inv: "NO. INVENTARIS: 02/KOTA MALANG",
+            bahan: "Batu Andesit",
+            ukuran: "Tinggi: 39 cm | Lebar: 34 cm",
+            asal: "Candi Badut",
+            gambar: "kuncup.jpg",
+            deskripsi: "Ornamen kuncup teratai tidak asing dalam kesenian Indonesia masa klasik (Hindu-Budha). Ornamen ini selalu menghias bangunan suci kedua agama tersebut. Dalam kepercayaan Hindu maupun Budha, teratai dianggap sebagai bunga yang erat hubungannya dengan penciptaan dewa-dewi dan kahyangan.\n\nSecara alamiah tanaman teratai hidup dalam tiga unsur alam: akar di tanah/lumpur, daun terapung di air, dan bunga di udara, yang dianggap mewakili alam semesta. Dalam ikonografinya, teratai dibagi menjadi 3 jenis: Padma (teratai merah), Utpala (teratai biru), dan Kumuda (teratai putih)."
+        },
+        "dwarapala": {
+            nama: "Arca Dwarapala",
+            inv: "NO. INVENTARIS: 05/KOTA MALANG",
+            bahan: "Batu Andesit",
+            ukuran: "Tinggi: 52 cm | Lebar: 49 cm | Tebal: 30 cm",
+            asal: "Tidak diketahui",
+            gambar: "dwarapala.jpg",
+            deskripsi: "Arca Dwarapala digambarkan dalam posisi jongkok dengan kaki kiri terangkat. Wajah berbentuk raksasa, rambut gimbal, tangan kanan membawa mangkuk, dan tangan kiri memegang lutut kiri. Wajah arca menengadah ke atas.\n\nDiduga arca ini merupakan arca penjaga halaman pintu pertapaan (mandala kadewaguruan) di lereng gunung. Gaya pahatannya menunjukkan gaya seni 'megalithik' muda (jaman Majapahit akhir) dengan pola pahatan sederhana yang sarat makna simbolis."
+        },
+        "tokoh-dewa": {
+            nama: "Tokoh Dewa",
+            inv: "NO. INVENTARIS: 16/KOTA MALANG",
+            bahan: "Batu Andesit",
+            ukuran: "Tinggi: 39 cm | Lebar: 36 cm | Tebal: 23 cm",
+            asal: "Tidak diketahui",
+            gambar: "tokoh dewa.jpg",
+            deskripsi: "Arca ini digambarkan dalam posisi duduk 'wirasana'. Dua tangan berada pada posisi bersemadi (dhyanamudra) di depan perut dengan bunga teratai merah (padma) di atas kedua telapak tangan.\n\nFigur ini diduga merupakan tokoh dewa kelompok 'astadikpalaka' (delapan dewa penjaga mata angin). Di Jawa, konsep ini disesuaikan dengan konsep 'nawasanga' pada ajaran Hindu Siwasidhanta."
+        },
+        "prasasti-muncang": {
+            nama: "Prasasti Muncang",
+            inv: "NO. INVENTARIS: 01/KOTA MALANG",
+            bahan: "Batu Andesit",
+            ukuran: "Tinggi: 142,5 cm | Lebar: 102 cm | Tebal: 22 cm",
+            asal: "Desa Blandit-Wonorejo Singosari",
+            gambar: "muncang.jpg",
+            deskripsi: "Isi dari prasasti Muncang bahwa pada tahun 866 saka bulan Caitra tanggal 6 suklapaksa (paroterang) hari 'tunglai-pahing-anggara' wuku Shinta, yang bertepatan dengan tanggal 3 Maret 944M.\n\nSri Maharaja Rake Hino Pu Sindok Sri Isana Wikramadharmottunggadewa memerintahkan melalui Rakai Kanuruhan untuk menetapkan sebidang tanah di desa Muncang yang masuk wilayah Hujung. Maksud dari penetapan sebidang tanah tersebut guna kelangsungan bangunan suci (tempat pemujaan) yang bernama 'Siddhayoga', yaitu sebuah tempat ketika para pendeta melakukan persembahan kepada bhatara setiap harinya, serta mempersembahkan kurban bunga kepada bhatara Sang Hyang Swayambuha di Walandit."
+        },
+        "ganesya": {
+            nama: "Ganesya",
+            inv: "NO. INVENTARIS: 04/KOTA MALANG",
+            bahan: "Batu Andesit",
+            ukuran: "Tinggi: 81 cm | Lebar: 45 cm | Tebal: 46 cm",
+            asal: "Koleksi DPU Jl. Halmahera (tempat asli tidak diketahui)",
+            gambar: "ganesya.jpg",
+            deskripsi: "Arca Ganesya ini sebagian besar dapat dikatakan utuh. Digambarkan duduk seperti bayi. Kepala memakai mahkota dari rambutnya yang disanggul (jatamakuta). Ujung belalai putus, kelopak mata dipahat agak dalam (diduga dahulu mata tersebut diisi dengan isian manik-manik atau logam).\n\nTangan empat buah (caturbhuja), tangan kanan belakang membawa kapak (parasu), tangan kiri belakang aus, tangan kanan depan juga aus, tangan kiri depan membawa mangkuk (modaka). Mengenakan kalung (hara), kelat bahu (keyura), gelang tangan (kankana), dan gelang kaki (nupura). Di depan dada melintang tali kasta (upavita), perut buncit (lambodara). Tempat duduknya berbentuk bunga teratai merah (padmasana). Di belakangnya terdapat sandaran yang sekaligus bermakna sebagai prabha."
+        },
+        "siwa-mahaguru": {
+            nama: "Siwa Mahaguru",
+            inv: "NO. INVENTARIS: 14/KOTA MALANG",
+            bahan: "Batu Andesit",
+            ukuran: "Tinggi: 58 cm | Lebar: 28,5 cm | Tebal: 14 cm",
+            asal: "Tidak diketahui",
+            gambar: "siwa mahaguru.jpg",
+            deskripsi: "Arca ini digambarkan berdiri tegak lurus (samabhangga). Tangan kanan membawa tasbih (aksamala), tangan kiri membawa kendi berisi amerta (kamandalu), sementara pada sandaran sebelah kanan terdapat senjata trisula.\n\nSiwa Mahaguru atau juga disebut Agastya adalah sosok resi yang sering dihubungkan dengan dewa Siwa. Oleh karena itu 'trisula' sebagai lambang dewa Siwa selalu berada di sisinya. Ada yang menganggap tokoh Siwa Mahaguru adalah Siwa sendiri sebagai 'daksinamurtti', yaitu ahli semadi dan guru dunia. Ada pula yang beranggapan itu adalah resi Agastya, salah satu siswa dewa Siwa yang paling dicintai."
+        }
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id') || 'kuncup-teratai';
+    const item = dataKoleksi[id] || dataKoleksi['kuncup-teratai'];
+
+    document.getElementById('nama-benda').textContent = item.nama;
+    document.getElementById('no-inv').textContent = item.inv;
+    document.getElementById('bahan').textContent = item.bahan;
+    document.getElementById('ukuran').textContent = item.ukuran;
+    document.getElementById('asal').textContent = item.asal;
+    document.getElementById('deskripsi').textContent = item.deskripsi;
+    document.getElementById('img-koleksi').src = item.gambar;
+    document.getElementById('img-koleksi').alt = item.nama;
+</script>
+
+</body>
+</html>

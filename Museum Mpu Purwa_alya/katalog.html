@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Koleksi - Museum Mpu Purwa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #121414;
+            color: #f2ebdd;
+        }
+
+        header {
+            background-color: #1f3339;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #c5a24a;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            color: #f2ebdd;
+        }
+
+        .logo p {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #c5a24a;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #f2ebdd;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #c5a24a;
+        }
+
+        .container {
+            padding: 60px 8%;
+            min-height: 80vh;
+        }
+
+        .judul-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul-section h2 {
+            font-size: 38px;
+            color: #f2ebdd;
+            margin-bottom: 8px;
+        }
+
+        .judul-section p {
+            font-family: Arial, sans-serif;
+            color: #c5a24a;
+            font-size: 14px;
+        }
+
+        .kategori-title {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #c5a24a;
+            margin: 40px 0 20px 0;
+            border-bottom: 1px dashed #2d4750;
+            padding-bottom: 8px;
+        }
+
+        .koleksi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #1f3339;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #2d4750;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #c5a24a;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 260px;
+            background-color: #18282d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .card-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .card-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 20px;
+            color: #f2ebdd;
+            margin-bottom: 8px;
+        }
+
+        .card-body .inv {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #c5a24a;
+            margin-bottom: 12px;
+        }
+
+        .card-body .dims {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #c5beb0;
+            margin-bottom: 20px;
+        }
+
+        .detail-btn {
+            margin-top: auto;
+            display: inline-block;
+            text-align: center;
+            background-color: #c5a24a;
+            color: #121414;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .detail-btn:hover {
+            background-color: #e2be62;
+        }
+
+        footer {
+            background-color: #121414;
+            color: #f2ebdd;
+            padding: 35px 8% 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #c5a24a;
+        }
+
+        footer h3 {
+            font-size: 22px;
+        }
+
+        footer p {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin-top: 8px;
+            color: #c5a24a;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>MUSEUM MPU PURWA</h1>
+        <p>WARISAN MASA LALU</p>
+    </div>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="katalog.html" class="active">Koleksi</a>
+        <a href="pengunjung.html">Kunjungan</a>
+        <a href="https://maps.app.goo.gl/9Q1M6z5eM8Yy81sC8" target="_blank" rel="noopener noreferrer">Lokasi 📍</a>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="judul-section">
+        <h2>Katalog Koleksi Museum</h2>
+        <p>Pengelompokan Artefak Berdasarkan Dimensi Ukuran</p>
+    </div>
+
+    <!-- KELOMPOK UKURAN KECIL (39 cm) -->
+    <h3 class="kategori-title">Koleksi Ukuran Kecil (Tinggi ~39 cm)</h3>
+    <div class="koleksi-grid">
+        <!-- Kuncup Teratai -->
+        <div class="card">
+            <a href="detail.html?id=kuncup-teratai" class="card-img">
+                <img src="kuncup.jpg" alt="Kuncup Teratai">
+            </a>
+            <div class="card-body">
+                <h3>Kuncup Teratai</h3>
+                <p class="inv">No. Inv: 02/Kota Malang</p>
+                <p class="dims">Ukuran: Tg. 39 cm | L. 34 cm</p>
+                <a href="detail.html?id=kuncup-teratai" class="detail-btn">Lihat Detail →</a>
+            </div>
+        </div>
+
+        <!-- Tokoh Dewa -->
+        <div class="card">
+            <a href="detail.html?id=tokoh-dewa" class="card-img">
+                <img src="tokoh dewa.jpg" alt="Tokoh Dewa">
+            </a>
+            <div class="card-body">
+                <h3>Tokoh Dewa</h3>
+                <p class="inv">No. Inv: 16/Kota Malang</p>
+                <p class="dims">Ukuran: Tg. 39 cm | L. 36 cm | Tb. 23 cm</p>
+                <a href="detail.html?id=tokoh-dewa" class="detail-btn">Lihat Detail →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- KELOMPOK UKURAN SEDANG (50 - 85 cm) -->
+    <h3 class="kategori-title">Koleksi Ukuran Sedang (Tinggi 50 – 85 cm)</h3>
+    <div class="koleksi-grid">
+        <!-- Siwa Mahaguru -->
+        <div class="card">
+            <a href="detail.html?id=siwa-mahaguru" class="card-img">
+                <img src="siwa mahaguru.jpg" alt="Siwa Mahaguru">
+            </a>
+            <div class="card-body">
+                <h3>Siwa Mahaguru</h3>
+                <p class="inv">No. Inv: 14/Kota Malang</p>
+                <p class="dims">Ukuran: Tg. 58 cm | L. 28,5 cm | Tb. 14 cm</p>
+                <a href="detail.html?id=siwa-mahaguru" class="detail-btn">Lihat Detail →</a>
+            </div>
+        </div>
+
+        <!-- Dwarapala -->
+        <div class="card">
+            <a href="detail.html?id=dwarapala" class="card-img">
+                <img src="dwarapala.jpg" alt="Dwarapala">
+            </a>
+            <div class="card-body">
+                <h3>Arca Dwarapala</h3>
+                <p class="inv">No. Inv: 05/Kota Malang</p>
+                <p class="dims">Ukuran: Tg. 52 cm | L. 49 cm | Tb. 30 cm</p>
+                <a href="detail.html?id=dwarapala" class="detail-btn">Lihat Detail →</a>
+            </div>
+        </div>
+
+        <!-- Ganesya -->
+        <div class="card">
+            <a href="detail.html?id=ganesya" class="card-img">
+                <img src="ganesya.jpg" alt="Ganesya">
+            </a>
+            <div class="card-body">
+                <h3>Ganesya</h3>
+                <p class="inv">No. Inv: 04/Kota Malang</p>
+                <p class="dims">Ukuran: Tg. 81 cm | L. 45 cm | Tb. 46 cm</p>
+                <a href="detail.html?id=ganesya" class="detail-btn">Lihat Detail →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- KELOMPOK UKURAN BESAR (> 100 cm) -->
+    <h3 class="kategori-title">Koleksi Ukuran Besar (Tinggi > 100 cm)</h3>
+    <div class="koleksi-grid">
+        <!-- Prasasti Muncang -->
+        <div class="card">
+            <a href="detail.html?id=prasasti-muncang" class="card-img">
+                <img src="muncang.jpg" alt="Prasasti Muncang">
+            </a>
+            <div class="card-body">
+                <h3>Prasasti Muncang</h3>
+                <p class="inv">No. Inv: 01/Kota Malang</p>
+                <p class="dims">Ukuran: Tg. 142,5 cm | L. 102 cm | Tb. 22 cm</p>
+                <a href="detail.html?id=prasasti-muncang" class="detail-btn">Lihat Detail →</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div>
+        <h3>Museum Mpu Purwa</h3>
+        <p>Warisan sejarah dan budaya Malang</p>
+    </div>
+    <p>&copy; 250911722743 Nur Alya Kaila Qoi Sara</p>
+</footer>
+
+</body>
+</html>
